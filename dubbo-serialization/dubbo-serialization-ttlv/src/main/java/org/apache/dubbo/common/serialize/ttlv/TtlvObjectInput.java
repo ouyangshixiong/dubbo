@@ -8,8 +8,10 @@ import java.lang.reflect.Type;
 
 public class TtlvObjectInput implements ObjectInput {
 
+    private final InputSteam inputStream;
+
     public TtlvObjectInput(InputStream is) {
-        // TODO
+        this.inputStream = is;
     }
 
     @Override
@@ -28,6 +30,7 @@ public class TtlvObjectInput implements ObjectInput {
     }
 
     @Override
+    //公司ttlv协议没有定义boolean
     public boolean readBool() throws IOException {
         return false;
     }
